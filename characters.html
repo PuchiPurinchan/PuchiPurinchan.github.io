@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>キャラチップ - プチプリンランド</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <header>
+    <h1>🌸 プチプリンランド 🌸</h1>
+    <p>ゲーム制作者・プチプリンちゃんのおへや</p>
+  </header>
+
+  <!-- ナビゲーションメニュー -->
+  <nav>
+    <a href="index.html">TOP</a>
+    <a href="profile.html">プロフィール</a>
+    <a href="games.html">ゲーム紹介</a>
+    <a href="characters.html" class="active">キャラチップ</a>
+    <a href="links.html">リンク</a>
+  </nav>
+
+  <!-- メインコンテンツ -->
+  <main>
+
+    <h2>🎨 キャラチップ</h2>
+    <p style="font-size: 0.9em; color: #b07080; margin-bottom: 16px;">画像をクリックすると大きく表示されます。</p>
+
+    <!-- 利用規約 -->
+    <div class="card terms-card">
+      <h3>📋 ご利用にあたって</h3>
+      <ul class="terms-list">
+        <li>素材は無料です。</li>
+        <li>スタッフロールなど、どこか1か所に <strong>『プチプリンちゃん』</strong> と表記してください。</li>
+        <li>加工は自由です。</li>
+        <li>使用報告は特に必要ありませんが、していただけると喜びます。</li>
+        <li>二次配布は禁止です。</li>
+        <li>ゲーム以外には使用しないでください。</li>
+        <li>商用利用、成人指定作品にもご利用できます。</li>
+        <li>私の素材は、RPGツクールMZの改変素材も含まれます。ツクールシリーズの利用規約に従って利用してください。</li>
+      </ul>
+      <a href="https://tkool.jp/support/" target="_blank" class="btn btn-small" style="margin-top: 12px;">📄 ツクールシリーズ利用規約</a>
+    </div>
+
+    <!-- キャラチップ一覧 -->
+    <div class="char-grid">
+
+      <div class="card char-card" onclick="openModal('images/char01.png', 'おじいさん')">
+        <img src="images/char01.png" alt="おじいさん" class="char-image">
+        <div class="char-info">
+          <h3>おじいさん</h3>
+          <p>若いもんには負けんわい。</p>
+        </div>
+      </div>
+
+      <div class="card char-card" onclick="openModal('images/char02.png', '動物たち01')">
+        <img src="images/char02.png" alt="動物たち01" class="char-image">
+        <div class="char-info">
+          <h3>動物たち01</h3>
+          <p>かわいがってくださいね。</p>
+        </div>
+      </div>
+
+      <div class="card char-card" onclick="openModal('images/char03.png', '動物たち02')">
+        <img src="images/char03.png" alt="動物たち02" class="char-image">
+        <div class="char-info">
+          <h3>動物たち02</h3>
+          <p>ニワトリです。</p>
+        </div>
+      </div>
+
+      <div class="card char-card" onclick="openModal('images/char04.png', 'お嬢さん')">
+        <img src="images/char04.png" alt="お嬢さん" class="char-image">
+        <div class="char-info">
+          <h3>お嬢さん</h3>
+          <p>若い女性キャラにどうぞ。</p>
+        </div>
+      </div>
+
+      <div class="card char-card" onclick="openModal('images/char05.png', 'お兄さん')">
+        <img src="images/char05.png" alt="お兄さん" class="char-image">
+        <div class="char-info">
+          <h3>お兄さん</h3>
+          <p>若い男性キャラにどうぞ。</p>
+        </div>
+      </div>
+
+      <div class="card char-card" onclick="openModal('images/char06.png', 'お子様')">
+        <img src="images/char06.png" alt="お子様" class="char-image">
+        <div class="char-info">
+          <h3>お子様</h3>
+          <p>たくさん遊ばせてください。</p>
+        </div>
+      </div>
+
+      <div class="card char-card" onclick="openModal('images/char07.png', 'メイドさん')">
+        <img src="images/char07.png" alt="メイドさん" class="char-image">
+        <div class="char-info">
+          <h3>メイドさん</h3>
+          <p>ご主人様！</p>
+        </div>
+      </div>
+
+      <div class="card char-card" onclick="openModal('images/char08.png', 'カフェ店員')">
+        <img src="images/char08.png" alt="カフェ店員" class="char-image">
+        <div class="char-info">
+          <h3>カフェ店員</h3>
+          <p>いらっしゃいませ！</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- フッター -->
+  <footer>
+    <p>© プチプリンランド</p>
+  </footer>
+
+  <!-- ポップアップ（モーダル） -->
+  <div id="modal" class="modal" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <img id="modal-image" src="" alt="" class="modal-image">
+      <p id="modal-title" class="modal-title"></p>
+    </div>
+  </div>
+
+  <script>
+    function openModal(src, title) {
+      document.getElementById('modal-image').src = src;
+      document.getElementById('modal-image').alt = title;
+      document.getElementById('modal-title').textContent = title;
+      document.getElementById('modal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    // キーボードのEscキーでも閉じられるように
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
+
+</body>
+</html>
