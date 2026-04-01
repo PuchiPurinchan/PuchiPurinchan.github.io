@@ -17,6 +17,9 @@ body {
   background-color: #fff5f7;
   color: #5c3d4e;
   line-height: 1.8;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* ===== ヘッダー ===== */
@@ -75,6 +78,7 @@ main {
   max-width: 860px;
   margin: 30px auto;
   padding: 0 20px;
+  flex: 1;
 }
 
 /* ===== セクションタイトル ===== */
