@@ -88,7 +88,7 @@ h2 {
   color: #d45f7a;
   border-left: 5px solid #ffb7c5;
   padding-left: 12px;
-  margin: 30px 0 16px;
+  margin: 5px 0 16px;
 }
 
 /* ===== カード（ボックス） ===== */
@@ -351,7 +351,7 @@ h2 {
   color: #d45f7a;
   font-weight: 500;
   white-space: nowrap;
-  width: 40%;
+  width: 30%;
 }
 
 .profile-table td {
