@@ -9,6 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    permissions:
+      id-token: write
+      contents: read  # ソースコードのチェックアウトなどが必要な場合に追加
     steps:
       - name: Checkout
         uses: actions/checkout@v4
